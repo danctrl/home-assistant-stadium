@@ -1,0 +1,36 @@
+# Ignore everything by default
+*
+
+# Allow core config files
+!*.yaml
+!*.md
+!.gitignore
+!*.sh
+!*.js
+
+# Optional: Allow custom dashboard files (if you use them)
+!www/
+!custom_components/
+
+# Explicitly ignore sensitive files
+secrets.yaml
+.storage/
+.cloud/
+.google.token
+home-assistant.log
+home-assistant_v2.db
+home-assistant_v2.db-shm
+home-assistant_v2.db-wal
+
+# Optional: ignore backups, recorder files, etc.
+backup/
+deps/
+__pycache__/
+*.log
+*.db
+*.db-shm
+*.db-wal
+
+# Never commit SSH keys
+.ssh/
+id_rsa*

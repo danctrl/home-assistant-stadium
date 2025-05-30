@@ -1,0 +1,178 @@
+- id: '1733606575183'
+  alias: Turn on Mirror in Bathroom when Motion is detected
+  description: ''
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      motion_entity: binary_sensor.bathroom_motion_motion
+      no_motion_wait: 180
+      light_target:
+        entity_id: light.bathroom_mirror_light
+- id: '1733703103824'
+  alias: Control Counter in Kitchen with Switch
+  description: ''
+  use_blueprint:
+    path: damru/ikea_E2201-E2213_ZHA-Z2M_control-anything.yaml
+    input:
+      remote_device: 09331b499b922f055934c41ae2470df6
+      helper_hold_delay: 150
+      helper_max_loops: 120
+      on_press_action:
+      - action: light.turn_on
+        metadata: {}
+        data: {}
+        target:
+          entity_id: light.kitchen_counter_light
+      off_press_action:
+      - action: light.turn_off
+        metadata: {}
+        data: {}
+        target:
+          entity_id: light.kitchen_counter_light
+      on_hold_action:
+      - action: light.turn_on
+        metadata: {}
+        data:
+          brightness_step: 3
+          transition: 0.3
+        target:
+          entity_id: light.kitchen_counter_light
+      off_hold_action:
+      - action: light.turn_on
+        metadata: {}
+        data:
+          brightness_step: -3
+          transition: 0.3
+        target:
+          entity_id: light.kitchen_counter_light
+- id: '1733705151399'
+  alias: Control Lights in Kitchen with Switch
+  description: ''
+  use_blueprint:
+    path: EPMatt/xiaomi_wxcjkg13lm.yaml
+    input:
+      integration: ZHA
+      controller_device: c9514a88012b6eefc62af5020cb96c3a
+      helper_last_controller_event: input_text.entrance_switch_last_controller_event
+      action_button_1_short:
+      - action: light.turn_off
+        metadata: {}
+        data: {}
+        target:
+          entity_id: light.kitchen_spots
+      action_button_2_short:
+      - action: light.turn_on
+        metadata: {}
+        data: {}
+        target:
+          entity_id: light.kitchen_spots
+      action_button_3_short:
+      - action: light.turn_off
+        metadata: {}
+        data: {}
+        target:
+          entity_id: light.kitchen_table
+      action_button_4_short:
+      - action: light.turn_on
+        metadata: {}
+        data: {}
+        target:
+          entity_id: light.kitchen_table
+      action_button_5_short:
+      - action: light.turn_off
+        metadata: {}
+        data: {}
+        target:
+          entity_id: light.kitchen_desk_light
+      action_button_6_short:
+      - action: light.turn_on
+        metadata: {}
+        data: {}
+        target:
+          entity_id: light.kitchen_desk_light
+- id: '1733746728994'
+  alias: Control Mirror in Bathroom with Switch
+  description: ''
+  use_blueprint:
+    path: damru/ikea_E2201-E2213_ZHA-Z2M_control-anything.yaml
+    input:
+      remote_device: 285ac0d20505efa1f44892d10bc1828a
+      on_press_action:
+      - action: light.turn_on
+        metadata: {}
+        data: {}
+        target:
+          entity_id: light.bathroom_mirror_light
+      off_press_action:
+      - action: light.turn_off
+        metadata: {}
+        data: {}
+        target:
+          entity_id: light.bathroom_mirror_light
+      on_hold_action:
+      - action: light.turn_on
+        metadata: {}
+        data:
+          transition: 0.3
+          brightness_step: 3
+        target:
+          entity_id: light.bathroom_mirror_light
+      off_hold_action:
+      - action: light.turn_on
+        metadata: {}
+        data:
+          brightness_step: -3
+          transition: 0.3
+        target:
+          entity_id: light.bathroom_mirror_light
+      helper_hold_delay: 150
+      helper_max_loops: 120
+      on_double_press_action:
+      - action: light.turn_on
+        metadata: {}
+        data: {}
+        target:
+          entity_id: light.bathroom_ceiling_light
+      off_double_press_action:
+      - action: light.turn_off
+        metadata: {}
+        data: {}
+        target:
+          entity_id: light.bathroom_ceiling_light
+      on_double_press_exposed: true
+      off_double_press_exposed: true
+- id: '1735479391216'
+  alias: 'Turn on Entrance when Motion is detected '
+  description: ''
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      motion_entity: binary_sensor.entrance_motion_motion
+      light_target:
+        entity_id: light.kitchen_entrance_light
+- id: '1743871555709'
+  alias: 'Turn on Counter in Kitchen when Motion is detected '
+  description: ''
+  use_blueprint:
+    path: homeassistant/motion_light.yaml
+    input:
+      motion_entity: binary_sensor.kitchen_counter_motion
+      light_target:
+        entity_id: light.kitchen_counter_light
+      no_motion_wait: 90
+- id: '1743972837807'
+  alias: Update notifications
+  description: ''
+  use_blueprint:
+    path: mdegat01/update_notifications.yaml
+    input:
+      update_entities:
+      - update.home_assistant_core_update
+      - update.home_assistant_operating_system_update
+      - update.home_assistant_supervisor_update
+      - update.hacs_update
+      mobile_app_device: 94f7a952a3df8cdba30a8614bcbccbe9
+      run_config_check: true
+      only_after: 08:00:00
+      only_before: '22:00:00'
+      mobile_app_device_2: f54a7fc059283d7538e286f3affbcb46
