@@ -176,3 +176,14 @@
       only_after: 08:00:00
       only_before: '22:00:00'
       mobile_app_device_2: f54a7fc059283d7538e286f3affbcb46
+- id: '1748632978207'
+  alias: GitHub Push – every 5 minutes
+  description: ''
+  triggers:
+  - trigger: time_pattern
+    minutes: '5'
+  conditions: []
+  actions:
+  - action: shell_command.github_push
+    data: {}
+  mode: single

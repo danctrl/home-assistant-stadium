@@ -19,3 +19,5 @@ http:
   trusted_proxies:
     - 10.69.1.245
 
+shell_command:
+  github_push: /bin/sh /config/scripts/github_push.sh
