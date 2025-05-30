@@ -20,4 +20,4 @@ http:
     - 10.69.1.245
 
 shell_command:
-  github_push: bin/sh /config/scripts/github_push.sh
+  github_push: /bin/sh /config/scripts/github_push.sh
