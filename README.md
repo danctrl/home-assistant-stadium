@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://www.home-assistant.io/images/logo/logo.png" width="150" alt="Home Assistant Logo">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/New_Home_Assistant_logo.svg" width="150" alt="Home Assistant Logo">
 </p>
 
 <h1 align="center">🏟️ Home Assistant – Stadium Instance</h1>
