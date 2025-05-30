@@ -1,4 +1,4 @@
-# 🏟️ Home Assistant – Stadium Instance
+# 🏠 Home Assistant – Stadium Instance
 
 Welcome to my **Home Assistant configuration** for the `Stadium` environment — a focused, reliable, and self-hosted smart home setup built with automation, clarity, and resilience in mind.
 
