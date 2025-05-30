@@ -1,8 +1,8 @@
-<p align="left">
+<p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/New_Home_Assistant_logo.svg" width="150" alt="Home Assistant Logo">
 </p>
 
-<h1 align="left">🏟️ Home Assistant – Stadium Instance</h1>
+<h1 align="center">🏟️ Home Assistant – Stadium Instance</h1>
 
 Welcome to my **Home Assistant configuration** for the `Stadium` environment — a focused, reliable, and self-hosted smart home setup built with automation, clarity, and resilience in mind.
 
