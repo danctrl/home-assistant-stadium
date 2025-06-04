@@ -1,0 +1,221 @@
+views:
+- badges:
+  - entity: light.presence_simulation
+    icon: mdi:home-account
+    show_entity_picture: false
+    show_icon: true
+    show_name: true
+    show_state: false
+    tap_action:
+      action: toggle
+    type: entity
+  - entity: switch.adaptive_lighting_kitchen
+    icon: mdi:weather-sunset
+    name: Adaptive Lightning
+    show_icon: true
+    show_name: true
+    show_state: false
+    tap_action:
+      action: toggle
+    type: entity
+  - entity: person.dan
+    show_entity_picture: true
+    show_icon: true
+    show_name: false
+    show_state: true
+    type: entity
+  cards: []
+  dense_section_placement: false
+  header:
+    badges_position: top
+    card:
+      content: '# Hello {{ user }}
+
+        Add your text here, template variables are supported ✨'
+      text_only: true
+      type: markdown
+    layout: start
+  max_columns: 4
+  sections:
+  - cards:
+    - badges:
+      - color: primary
+        entity: binary_sensor.kitchen_counter_motion
+        show_icon: true
+        show_state: false
+        type: entity
+      heading: Kitchen
+      heading_style: title
+      icon: mdi:fridge
+      type: heading
+    - entity: light.kitchen_spots
+      features:
+      - type: light-brightness
+      features_position: bottom
+      show_entity_picture: false
+      type: tile
+      vertical: false
+    - entity: light.kitchen_counter_light
+      features_position: bottom
+      type: tile
+      vertical: false
+    - entity: light.kitchen_desk_light
+      features_position: bottom
+      type: tile
+      vertical: false
+    - entity: media_player.kitchen
+      features_position: bottom
+      type: tile
+      vertical: false
+    type: grid
+  - cards:
+    - badges: []
+      heading: Bedroom
+      heading_style: title
+      icon: mdi:bed-king
+      type: heading
+    - entity: light.bedroom_bedside_light
+      features_position: bottom
+      type: tile
+      vertical: false
+    - entity: light.bedroom_spot_light
+      features_position: bottom
+      type: tile
+      vertical: false
+    - entity: binary_sensor.bedroom_window_opening
+      features_position: bottom
+      type: tile
+      vertical: false
+    type: grid
+  - cards:
+    - badges:
+      - color: red
+        entity: sensor.bathroom_climate_temperature
+        show_icon: true
+        show_state: true
+        type: entity
+      - color: indigo
+        entity: sensor.bathroom_climate_humidity
+        show_icon: true
+        show_state: true
+        type: entity
+      - color: primary
+        entity: binary_sensor.bathroom_motion_motion
+        show_icon: true
+        show_state: false
+        type: entity
+      heading: Bathroom
+      heading_style: title
+      icon: mdi:shower-head
+      type: heading
+    - entity: light.bathroom_mirror_light
+      features_position: bottom
+      type: tile
+      vertical: false
+    - entity: light.bathroom_ceiling_light
+      features_position: bottom
+      type: tile
+      vertical: false
+    - entity: binary_sensor.bathroom_window_opening
+      features_position: bottom
+      type: tile
+      vertical: false
+    type: grid
+  - cards:
+    - heading: Climate
+      heading_style: title
+      icon: mdi:thermometer
+      type: heading
+    - detail: 1
+      entity: sensor.berlin_temperature
+      graph: line
+      name: Temperature
+      type: sensor
+    - entity: sensor.berlin_rain
+      features_position: bottom
+      type: tile
+      vertical: false
+    - entity: sun.sun
+      features_position: bottom
+      type: tile
+      vertical: false
+    type: grid
+  - cards:
+    - badges:
+      - color: primary
+        entity: binary_sensor.entrance_motion_motion
+        show_icon: true
+        show_state: false
+        type: entity
+      heading: Entrance
+      heading_style: title
+      icon: mdi:door-open
+      type: heading
+    - entity: lock.entrance_frontdoor_lock
+      features_position: bottom
+      type: tile
+      vertical: false
+    - entity: lock.aqara_smart_lock_u200
+      features_position: bottom
+      name: Apartment Door
+      type: tile
+      vertical: false
+    - entity: light.kitchen_entrance_light
+      features_position: bottom
+      type: tile
+      vertical: false
+    - entity: binary_sensor.entrance_apartmentdoor_opening
+      features_position: bottom
+      name: Door
+      type: tile
+      vertical: false
+    type: grid
+  - cards:
+    - heading: Updates
+      heading_style: title
+      icon: mdi:update
+      type: heading
+    - entity: update.home_assistant_supervisor_update
+      features_position: bottom
+      icon: mdi:home-assistant
+      name: Supervisior
+      type: tile
+      vertical: false
+    - entity: update.home_assistant_core_update
+      features_position: bottom
+      icon: mdi:home-assistant
+      name: Core
+      type: tile
+      vertical: false
+    - entity: update.home_assistant_operating_system_update
+      features_position: bottom
+      icon: mdi:home-assistant
+      name: OS
+      type: tile
+      vertical: false
+    - entity: automation.update_notifications
+      features_position: bottom
+      icon: mdi:rotate-right
+      name: Auto-update
+      show_entity_picture: false
+      tap_action:
+        action: toggle
+      type: tile
+      vertical: false
+    type: grid
+  - cards:
+    - heading: Dining Area
+      heading_style: title
+      icon: mdi:silverware-fork-knife
+      type: heading
+    - entity: light.kitchen_table
+      features_position: bottom
+      type: tile
+      vertical: false
+    - entity: light.kitchen_fridge
+      features_position: bottom
+      type: tile
+      vertical: false
+    type: grid
+  title: Home
+  type: sections
