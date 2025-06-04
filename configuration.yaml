@@ -19,8 +19,11 @@ http:
   use_x_forwarded_for: true
   trusted_proxies:
     - 10.69.1.245    # Traefik
-    - 10.89.0.26     # Authentik Outpost
+    - 10.89.0.26     # Authentik Proxy
     - 10.89.0.1      # Netork-Gateway (empfohlen)
+    - 10.69.1.0/24   # Default Network
+    - 127.0.0.1      # localhost (immer gut)
+
 
 # Configuration for the auth_header custom authentication component
 auth_header:
