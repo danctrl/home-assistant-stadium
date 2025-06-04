@@ -40,6 +40,8 @@ I'm running this on a Lenovo ThinkCentre M710q with RHEL 9.5, virtualized via KV
 
 ## 🧩 Installed Add-ons
 
+- 🚧 [Under Constrcution](https://github.com/custom-components/readme/issues/22) 🚧 
+
 ---
 
 ## 🧬 HACS Integrations
