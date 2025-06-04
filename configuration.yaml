@@ -1,23 +1,39 @@
-
-# Loads default set of integrations. Do not remove.
+# Load the default set of integrations (do not remove this)
 default_config:
 
-# Enable zeroconf for mDNS/Bonjour discovery of network devices like HomeKit bridges
+# Enable mDNS/Bonjour discovery (useful for HomeKit and other devices)
 zeroconf:
 
-# Load frontend themes from the themes folder
+# Load themes from the 'themes' directory
 frontend:
   themes: !include_dir_merge_named themes
 
+# Include automations, scripts, scenes, and HomeKit config
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 homekit: !include homekit.yaml
 
+# HTTP server settings and reverse proxy configuration
 http:
   use_x_forwarded_for: true
   trusted_proxies:
-    - 10.69.1.245
+    - 10.69.1.245    # Traefik
+    - 10.89.0.26     # Authentik Outpost
+    - 10.89.0.1      # Netork-Gateway (empfohlen)
 
+# Configuration for the auth_header custom authentication component
+auth_header:
+  username_header: X-ak-hass-user  # This must match the header set by Authentik Outpost
+  allow_bypass_login: false        # Don't allow bypassing the login screen if no header is present
+  debug: true                      # Enable to see incoming headers in the HA logs
+
+# Enable debug logging for auth_header (useful for troubleshooting)
+logger:
+  default: info
+  logs:
+    custom_components.auth_header: debug
+
+# Custom shell command to push HA config to GitHub (adjust script path if needed)
 shell_command:
   github_push: /bin/sh /config/scripts/github_push.sh
