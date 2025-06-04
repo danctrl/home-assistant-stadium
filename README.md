@@ -1,60 +1,93 @@
-<p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/New_Home_Assistant_logo.svg" width="150" alt="Home Assistant Logo">
-</p>
+# 🏡 Home Assistant – Stadium
 
-<h1 align="center">🏟️ Home Assistant – Stadium Instance</h1>
+Hi there!  
+Welcome to my personal smart home project, codenamed **“Stadium”** – a local-first, privacy-respecting, and modular Home Assistant setup.
 
-Welcome to my **Home Assistant configuration** for the `Stadium` environment — a focused, reliable, and self-hosted smart home setup built with automation, clarity, and resilience in mind.
-
-This public repo serves as:
-- 🧠 A version-controlled backup of my Stadium instance
-- 📚 A reference for others looking to structure their HA config
-- 🔄 A foundation for daily automated syncs to GitHub
-
-> ⚠️ No sensitive information included — `secrets.yaml`, `.storage/`, tokens, and other private data are ignored via `.gitignore`.
+I'm running this on a Lenovo ThinkCentre M710q with RHEL 9.5, virtualized via KVM. The goal: reliable automation, native Apple Home integration, and a clean structure I can build on.
 
 ---
 
-## 📁 Structure
+## 📊 Quick Stats
 
-```bash
-/config/
-├── configuration.yaml       # Core config
-├── automations.yaml         # Manual automations
-├── scripts.yaml             # Reusable actions
-├── scenes.yaml              # Lighting & moods
-├── www/                     # Custom frontend assets
-├── custom_components/       # Optional custom integrations
-└── ...
-```
+| Description               | Value                          |
+|---------------------------|--------------------------------|
+| Entities in total         | 409           |
+| Number of sensors         | 190    |
+| Installed add-ons         | 0           |
+| HACS components (custom)  | 8  |
 
 ---
 
-## 🔄 Auto Backup
+## ⚙️ Hardware Overview
 
-This configuration is:
-- Automatically synced to GitHub **every night at 03:00**
-- Using a custom `push.sh` script and `cron`
-- Git commits are timestamped for full history traceability
-
----
-
-## 🚧 Notes
-
-- This is part of a dual-instance setup: see [home-assistant-lounge](https://github.com/danctrl/home-assistant-lounge) for the second zone.
-- Everything here is tailored to **my specific hardware, network setup, and use cases** — feel free to fork and adapt.
+- 💻 **Device**: Lenovo ThinkCentre M710q (Intel i5)
+- 🧠 **OS**: Red Hat Enterprise Linux 9.5
+- 🖥️ **Hypervisor**: KVM + Home Assistant OS VM
+- 📡 **Zigbee**: Sonoff Zigbee Dongle Plus (via ZHA)
+- 🌐 **Thread / Matter**: Apple HomePod mini (Thread Border Router)
 
 ---
 
-## 🤝 Contributing / Feedback
+## 🧠 Architecture at a Glance
 
-This project is personal, but if you have **ideas, feedback or questions**, feel free to open an issue or discussion.
+- Home Assistant OS in a dedicated KVM VM
+- Reverse proxy managed via **Traefik**, protected with **Authentik (OIDC)**
+- Zigbee (ZHA), Matter, MQTT and HomeKit all integrated
+- Secure automation deployment and secrets handling
+- Backup to Google Drive and config versioning with GitHub
+
+---
+
+## 🧩 Installed Add-ons
 
 ---
 
-## 🧙‍♂️ Author
+## 🧬 HACS Integrations
 
-**danctrl** – [danctrl.dev](https://danctrl.dev)  
-I build self-hosted systems, clean automations, and occasional chaos.
+These are custom components installed through HACS:
+- [Adaptive Lighting](https://github.com/basnijholt/adaptive-lighting): _Adaptive Lighting custom component for Home Assistant_
+- [Alarmo](https://github.com/nielsfaber/alarmo): _Easy to use alarm system integration for Home Assistant_
+- [Generate Readme](https://github.com/custom-components/readme): _Use Jinja and data from Home Assistant to generate your README.md file_
+- [HACS](https://github.com/hacs/integration): _HACS gives you a powerful UI to handle downloads of all your custom needs._
+- [Header Authentication](https://github.com/BeryJu/hass-auth-header): _Home Assistant custom component, which allows you to delegate authentication to a reverse proxy._
+- [Presence Simulation](https://github.com/slashback100/presence_simulation): _Home Assistant Presence Simulation_
+- [Scene Presets](https://github.com/Hypfer/hass-scene_presets): _Hue-like scene presets for lights in home assistant_
+- [Spook 👻 Your Homie](https://github.com/frenck/spook): _A scary 👻 powerful toolbox 🧰 for Home Assistant 🏡_
 
 ---
+
+## 🎨 Lovelace Plugins
+
+---
+
+## 🎭 Themes
+
+---
+
+## 🤖 Favorite Automations
+
+Here are some automations I use daily or am particularly proud of:
+
+- 💡 Adaptive Lighting that adjusts based on sun position and presence
+- 🕵️‍♂️ Presence detection using UniFi + iPhone + MQTT trackers
+- 🔔 Ring Intercom video & MQTT integration for door alerts
+- 💤 Sleep mode scenes triggered via Shortcuts + motion sensors
+- 🎙️ Google Translate TTS alerts (e.g. for smoke or intrusion)
+
+---
+
+## 🔒 Security & Backups
+
+- 🔐 Access secured with Traefik + Authentik
+- 📦 Daily encrypted backups pushed to Google Drive
+- 🧾 Secrets are stored securely in `secrets.yaml`
+- 🔍 Periodic checks with Lynis and SSH terminal access
+
+---
+
+## 📝 Final Notes
+
+This README is automatically generated using the  
+[custom-components/readme](https://github.com/custom-components/readme) integration.
+
+If you’re reading this and are working on your own smart home — feel free to borrow ideas or reach out!
