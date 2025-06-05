@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="homeassistant/image/stadium_banner.jpg" alt="Stadium – Home Assistant Project Banner" width="100%">
+  <img src="stadium_banner.png" alt="Stadium – Home Assistant Project Banner" width="100%">
 </p>
 
 
