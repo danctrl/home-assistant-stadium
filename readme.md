@@ -3,7 +3,7 @@
 </p>
 
 
-Hi there!  
+Hi there! 👋 
 Welcome to my personal smart home project, codenamed **“Stadium”** – a local-first, privacy-respecting, and modular Home Assistant setup.
 
 I'm running this on a Lenovo ThinkCentre M710q with RHEL 9.5, virtualized via KVM. The goal: reliable automation, native Apple Home integration, and a clean structure I can build on.
