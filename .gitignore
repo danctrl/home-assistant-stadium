@@ -36,6 +36,4 @@ __pycache__/
 id_rsa*
 
 # Allow image for GitHub banner
-!homeassistant/
-!homeassistant/image/
-!homeassistant/image/stadium_banner.jpeg
+!stadium_banner.png
