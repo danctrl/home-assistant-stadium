@@ -1,4 +1,7 @@
-# 🏡 Home Assistant – Stadium
+<p align="center">
+  <img src="homeassistant/image/stadium_banner.jpg" alt="Stadium – Home Assistant Project Banner" width="100%">
+</p>
+
 
 Hi there!  
 Welcome to my personal smart home project, codenamed **“Stadium”** – a local-first, privacy-respecting, and modular Home Assistant setup.
