@@ -34,3 +34,8 @@ __pycache__/
 # Never commit SSH keys
 .ssh/
 id_rsa*
+
+# Allow image for GitHub banner
+!homeassistant/
+!homeassistant/image/
+!homeassistant/image/stadium_banner.jpg
