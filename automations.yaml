@@ -1,4 +1,4 @@
-- id: '1733606575183'
+- id: '1733606575183' 
   alias: Turn on Mirror in Bathroom when Motion is detected
   description: ''
   use_blueprint:
